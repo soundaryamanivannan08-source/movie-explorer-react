@@ -1,5 +1,5 @@
 // Curated list of high-rated movies with rich details, genres, posters and backdrops
-export const MOVIES_DATA = [
+const moviesData = [
   // ================= MALAYALAM, TELUGU & ANIMATION BLOCKBUSTERS (TRENDING SECTION) =================
   
   // ----- MALAYALAM MOVIES -----
@@ -781,6 +781,17 @@ export const MOVIES_DATA = [
     trailerCode: "JfVOs4VSpmA"
   }
 ];
+
+const resolveImagePath = (path) =>
+  path.startsWith("/images/")
+    ? `${import.meta.env.BASE_URL}${path.slice(1)}`
+    : path;
+
+export const MOVIES_DATA = moviesData.map((movie) => ({
+  ...movie,
+  poster: resolveImagePath(movie.poster),
+  backdrop: resolveImagePath(movie.backdrop)
+}));
 
 export const GENRES_LIST = [
   "All",

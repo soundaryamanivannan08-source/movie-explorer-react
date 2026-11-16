@@ -68,7 +68,7 @@ export const Navbar = () => {
           {/* Brand Logo */}
           <Link to="/" className="brand-logo" aria-label="Stackly Home">
             <img
-              src="/images/logo_0983.webp"
+              src={`${import.meta.env.BASE_URL}images/logo_0983.webp`}
               alt="Stackly"
               className="brand-logo-img"
             />
@@ -205,7 +205,7 @@ export const Navbar = () => {
                   aria-label="Stackly Home"
                 >
                   <img
-                    src="/images/logo_0983.webp"
+                    src={`${import.meta.env.BASE_URL}images/logo_0983.webp`}
                     alt="Stackly"
                     className="brand-logo-img"
                   />
