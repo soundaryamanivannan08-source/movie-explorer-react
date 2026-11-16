@@ -115,38 +115,36 @@
   align-items: center;
   gap: 0.6rem;
   user-select: none;
+  text-decoration: none;
 }
 
-.logo-icon-wrapper {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, #e50914, #990000);
-  border-radius: var(--radius-md);
+.brand-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(229, 9, 20, 0.2));
+  transition: transform var(--transition-fast), opacity var(--transition-fast), filter var(--transition-fast);
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.03);
+  opacity: 0.98;
+  filter: drop-shadow(0 4px 14px rgba(229, 9, 20, 0.45));
+}
+
+.footer-logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #fff;
-  box-shadow: 0 2px 10px var(--accent-red-glow);
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  text-decoration: none;
 }
 
-.logo-sparkle {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  color: var(--accent-gold);
-}
-
-.brand-name {
-  font-family: var(--font-heading);
-  font-size: 1.45rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #ffffff;
-}
-
-.brand-accent {
-  color: var(--accent-red);
+.footer-logo-img {
+  height: 36px;
+  max-width: 150px;
 }
 
 /* Desktop Nav */
@@ -212,45 +210,70 @@
 /* Mobile Drawer Overlay */
 .mobile-drawer-overlay {
   position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
-  z-index: 1100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
   display: flex;
   justify-content: flex-end;
   animation: fadeIn 0.2s ease;
 }
 
 .mobile-drawer {
-  width: 82%;
-  max-width: 320px;
-  background-color: var(--bg-surface);
+  width: 85%;
+  max-width: 330px;
+  background-color: #111625;
+  background: linear-gradient(180deg, #171f33 0%, #0d121f 100%);
   height: 100%;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  box-shadow: -4px 0 25px rgba(0, 0, 0, 0.6);
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.9);
   animation: slideLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10000;
 }
 
 .mobile-drawer-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .close-drawer-btn {
   color: var(--text-secondary);
-  padding: 0.4rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.close-drawer-btn:hover {
+  color: #ffffff;
+  background: rgba(229, 9, 20, 0.2);
 }
 
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  margin-top: 1.5rem;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
   flex: 1;
 }
 
@@ -258,20 +281,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.8rem;
-  padding: 0.85rem 1rem;
+  gap: 0.85rem;
+  padding: 0.9rem 1.1rem;
   border-radius: var(--radius-md);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.05rem;
-  color: var(--text-secondary);
+  color: #f1f5f9;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all var(--transition-fast);
+  text-decoration: none;
 }
 
 .mobile-nav-item:hover,
 .mobile-nav-active {
-  background-color: rgba(229, 9, 20, 0.12);
+  background: linear-gradient(90deg, rgba(229, 9, 20, 0.25) 0%, rgba(229, 9, 20, 0.08) 100%);
   color: #ffffff;
-  border-left: 3px solid var(--accent-red);
+  border-left: 4px solid var(--accent-red);
+  border-color: rgba(229, 9, 20, 0.4);
 }
 
 .mobile-fav-left {
@@ -281,10 +308,10 @@
 }
 
 .mobile-drawer-footer {
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-subtle);
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: #94a3b8;
 }
 
 /* ================= HERO SECTION ================= */

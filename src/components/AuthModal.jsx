@@ -91,7 +91,7 @@ export const AuthModal = ({ isOpen, onClose }) => {
             <LogIn size={22} />
           </div>
           <h2 className="auth-title">
-            {isSignUp ? "Create CineScope Account" : "Welcome Back"}
+            {isSignUp ? "Create Stackly Account" : "Welcome Back"}
           </h2>
           <p className="auth-subtitle">
             {isSignUp
@@ -219,7 +219,7 @@ export const AuthModal = ({ isOpen, onClose }) => {
           </div>
 
           <button type="submit" className="btn-primary auth-submit-btn">
-            <span>{isSignUp ? "Create Free Account" : "Sign In to CineScope"}</span>
+            <span>{isSignUp ? "Create Free Account" : "Sign In to Stackly"}</span>
           </button>
 
           {/* Quick Demo Login Option */}

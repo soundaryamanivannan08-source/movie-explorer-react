@@ -9,12 +9,13 @@ export const Footer = () => {
         <div className="footer-top">
           {/* Column 1: Brand Info */}
           <div className="footer-brand">
-            <div className="footer-logo">
-              <Film size={22} className="logo-icon" />
-              <span className="brand-name">
-                Cine<span className="brand-accent">Scope</span>
-              </span>
-            </div>
+            <Link to="/" className="footer-logo" aria-label="Stackly Home">
+              <img
+                src="/images/logo_0983.webp"
+                alt="Stackly"
+                className="brand-logo-img footer-logo-img"
+              />
+            </Link>
             <p className="footer-tagline">
               Your ultimate gateway to explore trending movies, cinema classics, ratings,
               and curate your personalized favourites list.

@@ -66,14 +66,12 @@ export const Navbar = () => {
       <header className={`site-header ${scrolled ? "header-scrolled" : ""}`}>
         <div className="header-container">
           {/* Brand Logo */}
-          <Link to="/" className="brand-logo" aria-label="CineScope Home">
-            <div className="logo-icon-wrapper">
-              <Film className="logo-icon" size={24} />
-              <Sparkles className="logo-sparkle" size={12} />
-            </div>
-            <span className="brand-name">
-              Cine<span className="brand-accent">Scope</span>
-            </span>
+          <Link to="/" className="brand-logo" aria-label="Stackly Home">
+            <img
+              src="/images/logo_0983.webp"
+              alt="Stackly"
+              className="brand-logo-img"
+            />
           </Link>
 
           {/* Desktop Navigation Links & Login */}
@@ -188,8 +186,9 @@ export const Navbar = () => {
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+      </header>
 
-        {/* Mobile Drawer Navigation */}
+      {/* Mobile Drawer Navigation */}
         {mobileMenuOpen && (
           <div className="mobile-drawer-overlay" onClick={() => setMobileMenuOpen(false)}>
             <div
@@ -199,12 +198,18 @@ export const Navbar = () => {
               aria-label="Mobile Navigation"
             >
               <div className="mobile-drawer-header">
-                <div className="brand-logo">
-                  <Film className="logo-icon" size={22} />
-                  <span className="brand-name">
-                    Cine<span className="brand-accent">Scope</span>
-                  </span>
-                </div>
+                <Link
+                  to="/"
+                  className="brand-logo"
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Stackly Home"
+                >
+                  <img
+                    src="/images/logo_0983.webp"
+                    alt="Stackly"
+                    className="brand-logo-img"
+                  />
+                </Link>
                 <button
                   className="close-drawer-btn"
                   onClick={() => setMobileMenuOpen(false)}
@@ -301,7 +306,6 @@ export const Navbar = () => {
             </div>
           </div>
         )}
-      </header>
 
       {/* Auth Modal */}
       <AuthModal isOpen={authModalOpen} onClose={closeAuthModal} />
